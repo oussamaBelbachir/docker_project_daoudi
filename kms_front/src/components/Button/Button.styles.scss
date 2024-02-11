@@ -1,0 +1,48 @@
+
+.custom-button{
+    width: 100%;
+    border: none !important;
+    padding: 11px 25px;
+    border-radius: 5px;
+    background-color: #3447b3;
+    transition: all .3s ease-in-out;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & svg{
+        background: #7885cf;
+        border-radius: 5px;
+        font-size: 23px;
+        padding: 2px;
+        display: block;
+        margin-right: 10px;
+    }
+
+    &.loading{
+        padding: 7px !important;
+    }
+
+    &.nomargin{
+        margin: 0  !important;
+    }
+
+    &.noheight{
+        height: auto !important ;
+    }
+
+    &.fitContent{
+        width: fit-content !important;
+    }
+
+    &:hover{
+        background-color: #4055cf;
+    }
+}

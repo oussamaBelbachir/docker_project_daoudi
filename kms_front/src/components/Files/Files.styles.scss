@@ -1,0 +1,51 @@
+.article__files{
+
+    & .show__files__download{
+        margin: 25px 0 40px;
+    }
+
+    & .pdf__preview__button{
+        font-weight: 500;
+        color: #3447b3;
+        cursor: pointer;
+
+        // margin: 25px 0 40px;
+        width: fit-content;
+        background: #e4e8ff;
+        padding: 1px 18px;
+        border-radius: 7px;
+
+        transition: all .2s ease-in-out !important;
+
+        &:hover{
+            background-color: #c7cfff;
+        }
+        & svg{
+            margin: 0;
+            margin-right: 10px;
+        }
+        
+    }
+
+    & .download__all{
+        font-weight: 500;
+        color: #3447b3;
+        cursor: pointer;
+
+        background-color: #e4e8ff;
+        width: fit-content;
+        background: #e4e8ff;
+        padding: 7px 18px;
+        border-radius: 7px;
+
+
+        transition: all .2s ease-in-out !important;
+
+        &:hover{
+            background-color: #c7cfff;
+        }
+
+    }
+
+
+}

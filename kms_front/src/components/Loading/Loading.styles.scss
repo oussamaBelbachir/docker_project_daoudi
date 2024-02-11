@@ -1,0 +1,29 @@
+.loading__page{
+    position: fixed;
+    background: #fff;
+    // width: 100%;
+    width: calc(100% - 300px);
+    height: 100vh;
+    top: 72px;
+    right: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.full{
+        background-color: #fff !important;
+        width: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
+    }
+    
+    @keyframes rotate360 {
+        to { transform: rotate(360deg); }
+      }
+
+    & .loading__logo{
+        width: 65px;
+        animation: 1s rotate360 infinite linear;
+    }
+}

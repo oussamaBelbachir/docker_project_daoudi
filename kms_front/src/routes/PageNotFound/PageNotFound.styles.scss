@@ -1,0 +1,17 @@
+.pagenotfound{
+    max-width: 340px;
+    margin: 90px auto 0;
+    & img{
+        display: block;
+        width: 100%;
+    }
+
+
+    & h3{
+        margin-top: 50px;
+        font-size: 25px;
+        font-weight: 400;
+        color: red;
+        text-align: center;
+    }
+}

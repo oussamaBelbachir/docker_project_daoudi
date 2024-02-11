@@ -1,0 +1,88 @@
+.signin{
+    display: flex;
+    height: 100vh;
+
+    @keyframes scale {
+        0% { 
+            transform: scale(1.02); 
+        }
+        50% { 
+            transform: scale(1); 
+        }
+        100% { 
+            transform: scale(1.02); 
+        }
+      }
+
+   
+    
+    & .error{
+        // background: #ff4949;
+        // color: #fff;
+        // padding: 10px;
+        // border-radius: 5px;
+        // margin-bottom: 20px;
+        // text-align: center;
+        // animation: .5s scale infinite linear;
+
+        background: #ffd2d2;
+        padding: 11px;
+        border-radius: 5px;
+        color: red;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 17px;
+    }
+
+    & h1{
+        position: relative;
+        font-weight: 500;
+        text-transform: capitalize;
+        font-size: 19px;
+        text-align: center;
+        width: fit-content;
+        margin: 20px 0 40px;
+        color: #3447b3;
+
+        &::after{
+            content: "";
+            position: absolute;
+            width: 46px;
+            height: 3px;
+            background-color: #3447b3;
+            top: 27px;
+            left: 0;
+        }
+    }
+    
+    & .connexion__form{
+   
+        padding: 20px 40px;
+        width: 670px;
+        background-color: #fff;
+        
+        margin-top: 45px;
+
+        & .fogot__password{
+            font-weight: 500;
+            margin-top: 16px;
+            text-align: center;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    }
+
+    & .right{
+        width: 100%;
+
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+
+        & img{
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

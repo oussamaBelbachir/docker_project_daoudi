@@ -1,0 +1,17 @@
+.flex-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+}
+
+.flex-center.full{
+    justify-content: space-between;
+}
+.flex-center.full > div{
+        width: 49%;
+}

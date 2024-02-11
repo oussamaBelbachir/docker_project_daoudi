@@ -1,0 +1,21 @@
+.no_results_found{
+    width: fit-content;
+    margin: 20px auto;
+
+    background: #eee;
+    padding: 20px 30px;
+    border-radius: 18px;
+
+    & img{
+        width: 170px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    & .message{
+        text-transform: capitalize;
+        margin-top: 20px;
+        font-size: 20px;
+        color: red;
+    }
+}

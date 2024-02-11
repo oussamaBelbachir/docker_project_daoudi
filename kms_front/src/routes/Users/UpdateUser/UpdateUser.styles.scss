@@ -1,0 +1,26 @@
+.update__user{
+    max-width: 800px;
+    margin: 50px auto;
+
+    & .status {
+        &.active .css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label{
+            color: green;
+            background: #cdffcd;
+            
+            
+        }
+
+        & .css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label{
+            width: 120px;
+            color: red;
+            background: #ffe9e9;
+            text-align: center;
+            padding: 2px;
+            border-radius: 5px;
+            margin-left: 12px;
+            font-weight: 500;
+        }
+    
+
+    }
+}

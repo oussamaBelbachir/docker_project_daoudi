@@ -1,0 +1,107 @@
+.user{
+        
+    & .editor{
+        background-color: #f4f5ff;
+
+        & .role span{
+            font-weight: 500 !important;
+        }
+    }
+    
+    & .avatar {
+
+        & .fullname{
+            position: relative;
+            text-transform: capitalize;
+            margin-left: 20px;
+            font-size: 15px;
+            font-weight: 500;
+
+            &.inactive{
+                &::after{
+                    background-color: red;
+                }
+            }
+
+            &::after{
+                content: "";
+                width: 10px;
+                height: 10px;
+                background-color: transparent;
+                position: absolute;
+                right: -17px;
+                border-radius: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        
+    }
+    
+
+    & .role span{
+        display: block;
+        // background-color: #d8deff;
+        width: 100px;
+        // text-align: center;
+        // padding: 5px;
+        border-radius: 5px;
+        text-transform: capitalize;
+        font-weight: 400;
+    }
+
+    & .directions{
+        text-transform: capitalize;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: fit-content;
+
+        & > div{
+            background-color: #d8deff;
+            height: fit-content;
+            width: 70px;
+            color: #3447b3;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: 500;
+            padding: 1px 0;
+        }
+        & > :nth-child(1){
+            margin-bottom: 10px;
+
+        }
+        & >  :nth-child(even) {
+            margin-left: 5px;
+          }
+
+    }
+
+    & .details{
+        background-color: #d8deff;
+        color: #3447b3 !important;
+        padding: 2px;
+        display: flex;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        // width: 70px;
+        transition: all .5s ease-in-out;
+        &:hover{
+            background-color: #3447b3 !important;
+            color: #d8deff !important;
+        }
+
+        &.left{
+            margin-right: 10px;
+        }
+    }
+
+    // & .actions{
+        // background-color: red;
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+    // }
+}

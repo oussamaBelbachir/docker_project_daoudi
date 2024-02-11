@@ -1,0 +1,113 @@
+.submenu{
+    // margin: 0 11px;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+    position: relative;
+
+    &:hover{
+        background-color: none;
+    }
+
+    & .chevronRightIcon{
+        transition: all .2s ease-in-out;
+    }
+
+    &.open{
+        // background-color: rgb(239 250 255);
+
+        &:after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #3447b3;
+
+            border-radius: 0px 40px 40px 0px;
+        }
+
+        & .submenu__title{
+            color: #3447b3;
+            font-weight: 500;
+        }
+    }
+
+    
+    &__title{
+        padding: 11px 18px;
+        margin: 10px 0px;
+        cursor: pointer;
+        padding-right: 8px;
+        transition: all .5s ease-in-out;
+
+
+        & .left{
+            display: flex;
+            text-transform: capitalize;
+            align-items: center;
+            cursor: pointer;
+
+            & svg{
+                margin-right: 7px;
+                font-size: 17px;
+            }
+        }
+        & svg{
+            font-size: 26px;
+            color: #3447b3;
+        }
+        
+    }
+
+    &__items{
+        margin-left: 30px;
+        display: none;
+        // padding-bottom: 15px;
+
+        & a{
+            display: block;
+            width: 100%;
+            padding: 8px 10px;
+            margin-right: 10px;
+            border-radius: 7px;
+            transition: all .2s ease-in-out;
+        }
+        & a.active{
+            color: #000 !important;
+            background-color: #cbd2ff;
+        }
+
+    }
+// ====================================================
+    &.open {
+
+        & .chevronRightIcon{
+            transform: rotate(90deg);
+        }
+        .submenu__items{
+            padding-left: 30px;
+            display: block !important;
+
+
+            & .item{
+                margin-bottom: 5px;
+                text-transform: capitalize;
+
+                &:last-child{
+                    margin-bottom: 0 !important;
+                }
+
+                & svg{
+                    font-size: 8px;
+                    display: block;
+                    margin-right: 8px;
+                    color: #3447b3;
+                }
+            }
+        }
+    }
+   
+
+ 
+}

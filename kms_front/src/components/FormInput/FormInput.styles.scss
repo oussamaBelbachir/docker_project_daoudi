@@ -1,0 +1,66 @@
+.form__input{
+    margin-bottom: 15px;
+    &.nomargin{
+        margin-bottom: 0px !important;
+    }
+    & label{
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+        & span{
+            color: red;
+            font-weight: bold;
+        }
+    }
+
+    & textarea{
+        min-height: 144px;
+        font-family: inherit !important;
+        line-height: 20px;
+    }
+
+    & input ,& select , & textarea{
+        display: block;
+        width: 100%;
+        padding: 13px 10px;
+        // border: 1px solid #aaa;
+        border: none;
+        background-color: #ededed;
+        border-radius: 5px;
+        max-width: 100%;
+      
+    }
+    & select{
+        text-transform: capitalize !important;
+    }
+
+    & option{
+        text-transform: capitalize !important;
+    }
+
+    &.error {
+        & input,& textarea{
+            background-color: rgb(255 235 235);
+            border: 1px solid #ffa4a4;
+        }
+
+        & label{
+            color: red;
+        }
+    }
+   
+
+    & .error_message{
+        color: red;
+        margin-top: 7px;
+
+        & svg{
+            margin: 0;
+            margin-right: 10px;
+            color: red;
+            background-color: #fff;
+        }
+    }
+
+
+}

@@ -1,0 +1,225 @@
+administrateur
+editor 
+reader
+
+
+direction check in the backend
+dynamic limit 🚨 🚨 🚨 🚨 🚨 🚨 🚨
+protection des routes Front (reader - editor - admin) ✅ ✅ ✅ ✅ ✅
+add users link for administrators ✅ ✅ ✅ ✅ ✅
+all backend protections ✅ ✅ ✅ ✅ ✅
+l'envoie des emails
+========> handleErrors
+filtering data backend && frontend
+optimization of pagination ==> number of pages
+//// ==== put project in docker 
+==> review All code !!!!!!!!!!
+==> profil
+==> responsive design
+==> update
+==>aggregation
+
+******************* faker
+
+
+
+
+<Route path="/users/*" element={<RestrictTo roles={["admin"]} />}>
+    <Route index element={<ListOfUsers />}/>
+    <Route path='ajouter' element={<CreateUser />}/>
+</Route> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React ,{useState} from 'react'
+import "./CreateArticle.styles.scss";
+import Button from '../../../components/Button/button.component';
+import FormInput from '../../../components/FormInput/FormInput.component';
+import ReactQuill from 'react-quill';
+import "react-quill/dist/quill.snow.css";
+import Label from '../../../components/Label/Label.component';
+import {createArticle} from "../../../Api/articles";
+import { toast } from 'react-hot-toast';
+import Editor from '../../../components/Editor/Editor.component';
+
+// import {htmlToMarkdown } from "./Parser";
+// import ReactMarkdown from "react-markdown";
+// import { remark } from "remark";
+// import rehypeRaw from "rehype-raw";
+// import rehypeParse from "rehype-parse";
+// import rehypeRemark from "rehype-remark";
+// import remarkStringify from "remark-stringify";
+// import { EditorState, convertToRaw } from 'draft-js';
+// import { Editor } from 'react-draft-wysiwyg';
+
+function CreateArticle() {
+
+    const direction_departments = {
+        "tmsa" : ["dev","marketing","it","finance","production"],
+        "cires" : ["dev_1","inf_1","logistique"],
+        "tme" : ["dev_2","inf_2","test_2"],
+        "tmu" : ["dev_3","inf_3","test_3"]
+    }
+    
+
+    const [direction,setDirection] = useState("");
+    const [department,setDepartment] = useState("");
+    const [title,setTitle] = useState("");
+    const [value,setValue] = useState("");
+    const [content,setContent] = useState("");
+    const [loading,setLoading] = useState(false);
+
+    const getDepartmentsByDirection = () => {
+        if(!direction) return [];
+        return direction_departments[direction].map(dir => ({value : dir,text : dir}));
+    }
+    
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+
+        if(!department || !direction || !title || !value)
+            return toast.error("Remplissez tous les champs !");
+
+        setLoading(true);
+
+        try{
+            const {data : res} = await createArticle({
+                direction,
+                department,
+                title,
+                content : value
+            });
+            console.log(res);
+            toast.success(res.message);
+            setDirection("");
+            setDepartment("");
+            setTitle("");
+            setValue("");
+        }catch(err){
+            console.log("Err ==> ",err);
+            toast.error("Error ❌ ❌ ❌");
+        }
+
+        setLoading(false);
+
+    }
+
+    
+    const modules = {
+        toolbar : [
+            [{header : [1,2,3,4,5,6,false]}],
+            [{font : []}],
+            [{size : []}],
+            ["bold","italic" , "underline", "strike" , "blockquote"],
+            [
+                {list : "ordered"},
+                {list : "bullet"},
+                {indent : "-1"},
+                {indent : "+1"}
+            ],
+            ["link","image","video"]
+        ]
+    }
+
+
+    console.log("*** ",content);
+   
+
+  return (
+    <div className='create__article'>
+        <form onSubmit={handleSubmit}>
+            <FormInput 
+                label={"Direction"}
+                name='direction'
+                required
+
+                values={Object.keys(direction_departments).map(dir => ({value : dir,text : dir}))}
+                value={direction}
+                onChange={(e) => { setDirection(e.target.value)}}
+            />
+
+            <FormInput 
+                label={"Département"}
+                name='department'
+                required
+
+                values={getDepartmentsByDirection()}
+                value={department}
+                onChange={(e) => { setDepartment(e.target.value)}}
+            />
+
+            <FormInput 
+                label={"Titre"}
+                placeholder=""
+                type='text'
+                name='title'
+                required
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+            />    
+
+            <div>
+                <Label required>Contenu</Label>
+                <ReactQuill theme="snow" value={value} onChange={setValue} modules={modules}/>
+            </div>
+
+            <Button loading={loading}>Ajouter</Button>
+        </form>
+
+        <div>
+            <hr/>
+            <hr/>
+            <hr/>
+            <hr/>
+
+            <div className='ht'>{value}</div>
+        </div>
+
+        <Editor 
+            value={content}
+            setValue={(value) => setContent(value)}
+        />
+
+ 
+
+
+    </div>
+  )
+}
+
+export default CreateArticle

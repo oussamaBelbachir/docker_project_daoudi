@@ -1,0 +1,91 @@
+.directions__checkbox{
+    // background-color: red;
+
+
+    background: #f8f9ff;
+    padding: 16px;
+    border-radius: 5px;
+    label{
+        margin-bottom: 15px;
+    }
+    & .items{
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         grid-gap: 10px;
+
+        //  background-color: red;
+         max-width: 600px;
+         margin: 0 auto;
+
+         & .direction__name {
+            font-weight: 400;
+            color: #3447b3;
+            margin-bottom: 8px;
+            text-transform: capitalize;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+         
+         & .departments__choices{
+             padding-left: 55px;
+
+             & .select__all{
+                text-transform: capitalize;
+                margin-bottom: 10px;
+                display: block;
+                padding-left: 20px;
+
+            }
+
+            & .departments{
+                padding-left: 30px;
+            }
+
+             label{
+                position: relative;
+                cursor: pointer;
+                &:hover{
+                    color: #3447b3;
+                }
+             }
+
+             & .checked__item{
+                width: 19px !important;
+                height: 19px !important;
+                display: block !important;
+                position: absolute;
+                left: -5px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                & svg{
+                    color: #3447b3;
+                    font-size: 19px;
+                }
+                display: none;
+             }
+             & input[type="checkbox"] {
+                /* Add if not using autoprefixer */
+                -webkit-appearance: none;
+                appearance: none;
+                /* For iOS < 15 to remove gradient background */
+                // background-color: #fff;
+                /* Not removed via appearance */
+                margin: 0;
+              }
+
+            & .department__item{
+                text-transform: capitalize;
+                padding-left: 20px;
+                margin-bottom: 10px;
+                display: block;
+            }
+         }
+
+         
+    }
+
+
+
+}

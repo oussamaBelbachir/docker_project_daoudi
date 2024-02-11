@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  kms_client:
+    build:
+      context: ./kms_front
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./kms_front/:/app
+      - /app/node_modules
+
+  kms_back:
+    build:
+      context: ./kms_back
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+
+  mongo:
+    image: mongo
+    volumes:
+      - mongo-db:/data/db
+
+volumes:
+  mongo-db:

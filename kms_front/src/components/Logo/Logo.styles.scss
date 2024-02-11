@@ -1,0 +1,10 @@
+.custom__logo{
+
+    &.center{
+        text-align: center;
+    }
+    // background-color: red;
+    & img{
+        width: 200px;
+    }
+}

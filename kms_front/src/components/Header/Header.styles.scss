@@ -1,0 +1,74 @@
+// .header__height{
+//     height: 75px !important;
+// }
+.header{
+    padding: 10px 30px;
+    border-bottom: 1px solid #ddd;
+    // box-shadow: 0 3px 6px -3px #d8d8d8;
+    background-color: #fff;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
+    // height: 75px;
+
+    & .user{
+        & .full__name{
+            text-transform: capitalize;
+            display: block;
+            margin-left: 10px;
+        }
+        & .avatar{
+            display: flex;
+            align-items: center;
+
+            & .full__name{
+                text-align: center;
+            }
+
+            & .role{
+                    display: block;
+                    margin: 0 auto;
+                    width: fit-content;
+                    background: #eee;
+                    padding: 4px 20px;
+                    margin-top: 5px;
+                    border-radius: 5px;
+                    text-transform: capitalize;
+                    font-size: 13px;
+                    color: #3447b3;
+                    font-weight: 500;
+            }
+        }
+    }
+
+    & .search{
+        // background-color: red;
+        position: relative;
+        margin-right: 20px;
+
+        & svg{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 8px;
+            color: #555;
+            font-size: 20px;
+        }
+        & input{
+            width: 350px;
+            padding: 10px;
+            padding-left: 34px;
+            border: 1px solid #aaa;
+            border-radius: 7px;
+            background: #f8f8f8;
+            color: #444;
+            font-size: 16px;
+        }
+    }
+}

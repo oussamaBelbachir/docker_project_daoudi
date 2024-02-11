@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  kms_back:
+    volumes:
+      - ./kms_back/:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=8000
+      - USERNAME=oussbastneko399
+      - DATABASE=mongodb+srv://oussbastneko399:<PASSWORD>@cluster0.9ks6w8s.mongodb.net/kms?retryWrites=true
+      - DATABASE_PASSWORD=WDsKx7gu4In516ea
+      - JWT_SECRET=PuwnDDo&£TiIOhUIig%TRsDRFtFBNk@$JiJLP
+      - NODE_JWT_EXPIRES_INENV=90d
+      - JWT_COOKIE_EXPIRES_IN=90
+    command: npm run dev

@@ -1,0 +1,57 @@
+.file__item{
+    // background-color: red;
+    margin-bottom: 20px;
+
+
+
+    & .info{
+
+        display: flex;
+        align-items: center;
+        // margin-bottom: 20px;
+    
+
+
+        & .item__name{
+            margin: 0 !important;
+            margin-right: 20px !important;
+        }
+    
+        & img{
+            width: 38px;
+            height: 38px;
+            display: block;
+            margin: 0;
+            margin-right: 20px;
+        }
+
+        & .icon{
+            background-color: #3447b3;
+            border-radius: 5px;
+            padding: 3px;
+            color: #ffffff;
+            margin-left: 12px;
+            display: block;
+            cursor: pointer;
+
+
+                // border-radius: 5px;
+                // color: #3447b3;
+                // margin-left: 22px;
+                // display: block;
+                // font-size: 30px;
+                // cursor: pointer;
+        }
+    }
+
+    & .pdf__preview{
+        margin: 20px auto 10px;
+        display: block;
+        width: fit-content;
+    }    iframe{
+        width: 450px;
+        height: 700px;
+    }
+
+
+}

@@ -1,0 +1,24 @@
+.mainlayout{
+    display: flex;
+
+    &__right{
+        width: 100%;
+        margin-left: 300px;
+
+        // & .main__content{
+        //     // background-color: red;
+        // }
+    }
+
+    &__sidebar{
+        background-color: red;
+    }
+    // &__body{
+    //     display: flex;
+    // }
+
+    // &__outlet{
+    //     width: 100%;
+    //     margin-left: 300px;
+    // }
+}
